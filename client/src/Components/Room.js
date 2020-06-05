@@ -116,7 +116,7 @@ const Room = (props) => {
           });
         });
     }
-  }, [roomID, audio, video]);
+  }, [roomID]);
 
   const createPeer = (userToSignal, callerID, stream) => {
     const peer = new Peer({
