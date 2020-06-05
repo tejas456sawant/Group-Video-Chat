@@ -1,8 +1,11 @@
+/** @format */
+
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import CreateRoom from "./routes/CreateRoom";
-import Room from "./routes/Room";
+import CreateRoom from "./Components/CreateRoom";
+import Room from "./Components/Room";
 import firebase from "firebase/app";
+import Login from "./Components/Login";
 
 firebase.initializeApp({
   apiKey: process.env.REACT_APP_apiKey,
@@ -19,8 +22,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={CreateRoom} />
-        <Route path="/room/:roomID" component={Room} />
+        <Route path='/' exact component={Login} />
+        <Route path='/create' exact component={CreateRoom} />
+        <Route path='/room/:roomID' component={Room} />
       </Switch>
     </BrowserRouter>
   );
