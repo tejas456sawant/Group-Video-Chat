@@ -19,13 +19,13 @@ const CreateRoom = ({ history }) => {
   const [roomId, setRoomId] = useState("");
 
   useEffect(() => {
-    /*let user = firebase.auth().currentUser;
+    let user = firebase.auth().currentUser;
     if (user === null) {
       return history.push("/");
     }
     if (user !== null) {
       return history.push("/create");
-    }*/
+    }
   }, [history]);
 
   const create = () => {
@@ -36,23 +36,21 @@ const CreateRoom = ({ history }) => {
   return (
     <Base>
       <Container sm={4} md={8}>
-        <Row className="justify-content-md-center">
+        <Row className='justify-content-md-center'>
           <Col
             sm={12}
             md={6}
-            style={{ marginTop: `${window.innerHeight / 3}px` }}
-          >
-            <Button variant="outline-dark" onClick={create} size="lg" block>
+            style={{ marginTop: `${window.innerHeight / 3}px` }}>
+            <Button variant='outline-dark' onClick={create} size='lg' block>
               <MdVideocam />
               {"     "}
               Create Room
             </Button>
             <Button
-              variant="outline-dark"
+              variant='outline-dark'
               onClick={() => setShow(true)}
-              size="lg"
-              block
-            >
+              size='lg'
+              block>
               <MdKeyboard />
               {"     "}
               Join Room
@@ -64,32 +62,30 @@ const CreateRoom = ({ history }) => {
       <Modal
         show={show}
         onHide={() => setShow(false)}
-        backdrop="static"
-        keyboard={false}
-      >
+        backdrop='static'
+        keyboard={false}>
         <Modal.Header closeButton>
           <Modal.Title>Enter Room ID</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <FormControl
-            placeholder="cb4456c3-88f0-4870-9c16-5e84c2c1837d"
-            aria-label="Enter Room ID"
-            aria-describedby="basic-addon2"
+            placeholder='cb4456c3-88f0-4870-9c16-5e84c2c1837d'
+            aria-label='Enter Room ID'
+            aria-describedby='basic-addon2'
             onChange={(event) => {
               setRoomId(event.target.value);
             }}
           />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShow(false)}>
+          <Button variant='secondary' onClick={() => setShow(false)}>
             Close
           </Button>
           <Button
-            variant="primary"
+            variant='primary'
             onClick={() => {
               history.push(`/room/${roomId}`);
-            }}
-          >
+            }}>
             Join
           </Button>
         </Modal.Footer>
