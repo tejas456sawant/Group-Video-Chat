@@ -22,9 +22,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path='/' exact component={Login} />
-        <Route path='/create' exact component={CreateRoom} />
-        <Route path='/room/:roomID' component={Room} />
+        <Route path="/" exact component={CreateRoom} />
+        <Route path="/create" exact component={Login} />
+        <Route path="/room/:roomID" component={Room} />
       </Switch>
     </BrowserRouter>
   );

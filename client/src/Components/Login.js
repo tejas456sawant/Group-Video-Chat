@@ -48,27 +48,33 @@ const Login = ({ history }) => {
 
   return (
     <Base>
-      <Container style={{ marginTop: "25%" }} sm={4} md={8}>
-        <Row className='justify-content-md-center'>
+      <Container
+        style={{ marginTop: `${window.innerHeight / 3}px` }}
+        sm={4}
+        md={8}
+      >
+        <Row className="justify-content-md-center">
           <Col sm={4} md={6}>
             <Button
-              variant='outline-dark'
-              size='lg'
+              variant="outline-dark"
+              size="lg"
               onClick={() => {
                 login("google");
               }}
-              block>
+              block
+            >
               <FaGoogle /> Google
             </Button>
           </Col>
           <Col sm={4} md={6}>
             <Button
-              variant='outline-dark'
-              size='lg'
+              variant="outline-dark"
+              size="lg"
               onClick={() => {
                 login("facebook");
               }}
-              block>
+              block
+            >
               <FaFacebookF /> Facebook
             </Button>
           </Col>
